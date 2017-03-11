@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <select id="countries" style="width: 300px;">
+        <option value="u">United States</option>
+        <option value="c">Cannada</option>
+        <option value="a">Australia</option>
+        <option value="l">London</option>
+        <option value="n">New Zealand</option>
+    </select>
+    <br />
+    <input type="button" id="dropDelete" value="DeleteDropdownList" onclick="DropDownList();" />
+    <script type="text/javascript">
+        function DropDownList() {
+            var dropDown = document.getElementById("countries");
+            for (var i = 0; i <= dropDown.options.length; i++) {
+                if (dropDown.options[i].selected) {
+                    dropDown.removeChild(dropDown.options[i]);
+                    break;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

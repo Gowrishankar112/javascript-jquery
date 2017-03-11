@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>Click on the below paragraph to notice the time</div>
+    <p>Count the number of milliseconds between the two click events on a paragraph </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    var lastt, tdiff;
+    $( "p" ).click(function( event ) {
+    if (lastt) {
+    tdiff = event.timeStamp - lastt;
+    $( "div" ).append( "Time since last event: " + tdiff + "<br>" );
+    }
+    else {
+    $( "div" ).append( "<br>Click again.<br>" );
+    }
+    lastt = event.timeStamp;
+    });
+    </script>
+</body>
+</html>

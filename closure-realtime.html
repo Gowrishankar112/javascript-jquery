@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var warnUser = function (msg) {
+            var calledCount =0;
+            return function () {
+                calledCount++;
+                alert(msg + '\nYou have been warned ' + calledCount + ' times.');
+            };
+        };
+
+        var warnForTamper = warnUser('You can not tamper with our HTML.');
+        warnForTamper();
+        warnForTamper();
+        
+    </script>
+</body>
+</html>

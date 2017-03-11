@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <p id="p1"></p>
+    <input type="button" value="maxvalue" onclick="maxArray();" />
+    <script>
+        function maxArray() {
+            var array = [12, 23, 42, 5, 57, 18];
+            document.getElementById("p1").innerHTML = Math.max.apply(null, array);
+        }
+        
+    </script>
+</body>
+</html>

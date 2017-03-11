@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>blur</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           
+            $("#field1").blur(function () {
+                $(this).css({ "background-color": "#f44141", "color": "#fff" });
+                alert("It is out of focus");
+            });
+        });
+    </script>
+</head>
+<body>
+   <form>
+        <input id="field1" type="text" placeholder="Field 1">
+        <input id="field2" type="text" placeholder="Field 2">
+    </form>
+   
+ 
+<p> The function loses focus and remains blur and when it points out of the field the field changes to red</p>
+     
+       
+</body>
+</html>

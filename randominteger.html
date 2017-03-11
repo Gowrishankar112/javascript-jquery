@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    
+    <p id="p1"></p>
+    <input type="button" value="Random Integer" onclick="randomInt();">
+    
+    <script>
+        function randomInt() {
+            var n = 100;
+            for (var i = 0; i <= n; i++) {
+                var randominteger = Math.floor(Math.random() * n);
+                document.getElementById("p1").innerHTML = randominteger;
+            }
+           
+        }
+    </script>
+</body>
+</html> 

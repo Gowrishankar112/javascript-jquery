@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("p").bind("click", function () {
+            $("<p>This is a click Event</p>").appendTo("body");
+        });
+
+        $("p").bind("dblclick", function () {
+            $("<p>This is a double-click Event</p>").appendTo("body");
+        });
+    });
+</script>
+    </head>
+<body>
+    <p>click here</p>
+    
+</body>
+</html>

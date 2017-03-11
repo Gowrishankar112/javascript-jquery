@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>        
+           <p id="p1"></p>
+           <input type="button" value="name" onclick="getName()" />
+           <p id="p2"></p>
+           <input type="button" value="Number of Items" onclick="getAllItems()"/>
+    <script>
+        var people = {
+            "p1": {
+                "name": "Prasad D",
+                "getName": function () {
+                    return this.name;
+                }
+            },
+            "p2": {
+                "name": "Harsha Vardhan",
+                "age": 39,
+                "getName": function () {
+                    return this.name;
+                }
+            },
+            "p3": {
+                "name": "Anna Smith",
+                "age": "24",
+                "getName": function () {
+                    return this.NAME;
+                }
+            },
+            "p4": {
+                "name": "Peter Jones",
+                "age": null,
+                "getName": function () {
+                    return this.name;
+                }
+            }
+        }
+        function getName() {
+            document.getElementById("p1").innerHTML=(people.p1.name);
+        }
+        function getAllItems() {
+            var length = Object.keys(people).length;
+            document.getElementById("p2").innerHTML = length;
+        }
+        
+        console.log(Object.getOwnPropertyNames(people).sort());
+
+        
+    </script>
+</body>
+</html>

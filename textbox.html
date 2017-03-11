@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+    <p id="p1"></p>
+    <input type="text" placeholder="First Name" id="fname" onchange="firstname()"><br>
+    <p id="p2"></p>
+    <input type="text" placeholder="Last Name" id="lname" onchange="lastname()"><br>
+    <script>
+        function firstname() {
+            document.getElementById("p1").innerHTML =
+        document.getElementById("fname").value;
+
+        }
+        function lastname() {
+            document.getElementById("p2").innerHTML =
+        document.getElementById("lname").value;
+        }
+    </script>
+</body>
+</html> 

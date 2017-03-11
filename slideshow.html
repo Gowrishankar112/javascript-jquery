@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+</head>
+<body>
+    <ul id="Slider">
+        <li class="slide"><img src="http://companiesinindia.in/wp-content/uploads/2014/05/software_companies_in_India.jpg" alt="" /></li>
+        <li class="slide"><img src="http://companiesinindia.in/wp-content/uploads/2013/10/software_companies.jpg" alt="" /></li>
+        <li class="slide"><img src="https://www.irissoftware.com/upload/images/masthead/software_product_companies.jpg" alt="" /></li>
+        <li class="slide"><img src="http://softdreamsolutions.com/images/slide1.jpg" alt="" /></li>
+        <li class="slide"><img src="http://www.inplanttraininginchennai.org/images/ipt_slide8.png" alt="" /></li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+           
+            var change_img_time = 3000;
+            var transition_speed = 100;
+
+            var simple_slideshow = $("#Slider"),
+                listItems = simple_slideshow.children('li'),
+                listLen = listItems.length,
+                i = 0,
+
+                changeList = function () {
+
+                    listItems.eq(i).fadeOut(transition_speed, function () {
+                        i += 1;
+                        if (i === listLen) {
+                            i = 0;
+                        }
+                        listItems.eq(i).fadeIn(transition_speed);
+                    });
+
+                };
+
+            listItems.not(':first').hide();
+            setInterval(changeList, change_img_time);
+
+        });
+    </script>
+</body>
+</html>

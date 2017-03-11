@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+  
+    <style>
+    #accordion {
+    font-style:italic;
+    font-size:18;
+    color:blueviolet;
+    background-color:lightgreen;
+    border-radius:5px;    
+    }   
+    </style>
+</head>
+<body>
+   <div id="accordion">
+        <h3>Section 1</h3>
+        <div>
+            <p>
+                HyperText Markup Language (HTML) is used to describe and define the content of a webpage.
+            </p>
+        </div>
+        <h3>Section 2</h3>
+        <div>
+            <p>Cascading Style Sheets (CSS) are used to describe the appearance or presentation of content on a webpage
+            </p>
+        </div>
+        <h3>Section 3</h3>
+        <div>
+            <p>
+                JavaScript is the programming language that runs in your browser. You can use it to add interactivity and other dynamic features to your website or application.
+            </p>
+            
+        </div>
+        <h3>Section 4</h3>
+        <div>
+            <p>
+                Scalable Vector Graphics (SVG) let you describe images as sets of vectors (lines) and shapes. One advantage of SVGs is that they scale smoothly regardless of the size at which they're drawn.
+            </p>
+            <p>
+                WebGL is a JavaScript API that lets you draw 3D or 2D graphics using the HTML5
+            </p>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   
+    <script>
+        $(function () {
+            $("#accordion").accordion();
+        });
+    </script>
+
+</body>
+</html>

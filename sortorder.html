@@ -1,0 +1,82 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+
+    <script src="sort.js"></script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            font-family: Garamond;
+        }
+
+        td {
+            border: 2px solid blue;
+            padding: 5px;
+        }
+
+        th {
+            border: 2px solid red;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .arrow-up {
+            width:0;
+            height:0;
+            border-left:5px solid transparent;
+            border-right:5px solid transparent;
+            border-bottom:10px solid black;
+            display: inline-block;
+        }
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid black;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body ng-app="myModule" style="font-family:Garamond">
+    <div ng-controller="myController">
+        Rows to display: <input type="number" step="1" min="0" max="7" ng-model="rowLimit" />
+        <br/><br/>
+        Sort fields by order: <select ng-model="sortColumn">
+  
+        <option value="FirstName">Name ASC</option>
+        <option value="dateOfBirth">DOB ASC</option>
+        <option value="Gender">Gender ASC</option>
+        <option value="-Salary">Salary ASC</option>
+         </select>
+        <br/><br/>
+        Search : <input type="text" placeholder="search employees" ng-model="searchText.country" />
+        <br/><br/>
+        <table>
+            <thead>
+                <tr>
+                    <th ng-click="sortData('FirstName')">FirstName <div ng-class="getSortClass('FirstName')"></div></th>
+                    <th ng-click="sortData('dateOfBirth')">DateOfBirth <div ng-class="getSortClass('dateOfBirth')"></div></th>
+                    <th ng-click="sortData('Gender')">Gender <div ng-class="getSortClass('Gender')"></div></th>
+                    <th ng-click="sortData('Salary')">Salary <div ng-class="getSortClass('Salary')"></div></th>
+                    <th ng-click="sortData('country')">country <div ng-class="getSortClass('country')"></div></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort | filter:searchText">
+                    <td>{{employee.FirstName | uppercase}}</td>
+                    <td>{{employee.dateOfBirth | date:"dd/MM/yy"}}</td>
+                    <td>{{employee.Gender | lowercase}}</td>
+                    <td>{{employee.Salary | currency:'$':2}}</td>
+                    <td>{{employee.country}}</td>
+
+                </tr>
+
+               
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

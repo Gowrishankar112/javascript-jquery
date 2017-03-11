@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <select id="mySelect"></select>
+    <script>
+        var myOptions = {
+            val1: 'Male',
+            val2: 'Female',
+            val3: 'Others'
+        };
+        var mySelect = $('#mySelect');
+        $.each(myOptions, function (val, text) {
+            mySelect.append(
+                $('<option></option>').val(val).html(text)
+            );
+        });
+     </script>
+</body>
+</html>
